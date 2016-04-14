@@ -96,21 +96,21 @@ public class WorldRenderer {
     private void drawDebug() {
         // Démarrage du renderer
         debugRenderer.setProjectionMatrix(cam.combined);
-        debugRenderer.begin(ShapeType.Filled);
+        debugRenderer.begin(ShapeType.Line);
  
         // render blocks
         for (Block block : world.getBlocks()) {
             Rectangle rect = block.getBounds();
-            float x1 = block.getPosition().x + rect.x;
-            float y1 = block.getPosition().y + rect.y;
+            float x1 = block.getPosition().x ;
+            float y1 = block.getPosition().y ;
             debugRenderer.setColor(new Color(1, 0, 0, 1));
             debugRenderer.rect(x1, y1, rect.width, rect.height);
         }
         // Rendre Bob
         Bob bob = world.getBob();
         Rectangle rect = bob.getBounds();
-        float x1 = bob.getPosition().x + rect.x;
-        float y1 = bob.getPosition().y + rect.y;
+        float x1 = bob.getPosition().x ;
+        float y1 = bob.getPosition().y ;
         debugRenderer.setColor(new Color(0, 1, 0, 1));
         debugRenderer.rect(x1, y1, rect.width, rect.height);
         debugRenderer.end();
